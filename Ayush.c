@@ -1,25 +1,11 @@
 #include <stdio.h>
-struct student {
-    char name[50];
-    int roll;
-    float marks;
-} s;
-
-int main() {
-    printf("Enter information:\n");
-    printf("Enter name: ");
-    fgets(s.name, sizeof(s.name), stdin);
-
-    printf("Enter roll number: ");
-    scanf("%d", &s.roll);
-    printf("Enter marks: ");
-    scanf("%f", &s.marks);
-
-    printf("Displaying Information:\n");
-    printf("Name: ");
-    printf("%s", s.name);
-    printf("Roll number: %d\n", s.roll);
-    printf("Marks: %.1f\n", s.marks);
-
-    return 0;
+union Time{
+ int h1,h2,m1,m2,s1,s2,h,m,s;
+}t1,t2,t3,t4,t5,t6;
+int main()
+{scanf("%d %d",&t1.h1,&t2.h2);
+scanf("%d %d",&t3.m1,&t4.m2);
+scanf("%d %d",&t5.s1,&t6.s2);
+printf("%d\n%d\n%d",(t1.h1-t2.h2),(t3.m1-t4.m2),(t5.s1-t6.s2));
+return 0;
 }
